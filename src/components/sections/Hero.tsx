@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import {
   SparklesIcon,
   DocumentTextIcon,
@@ -6,18 +7,29 @@ import {
 import Button from '@/components/ui/Button';
 import Badge from '@/components/ui/Badge';
 import Container from '@/components/ui/Container';
-import { SITE } from '@/lib/constants';
+import { SITE, IMAGES } from '@/lib/constants';
 
 export default function Hero() {
   return (
     <section className="relative overflow-hidden py-20 sm:py-28 lg:py-32">
-      {/* Background decoration */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[600px] h-[600px] rounded-full bg-primary-100/40 blur-3xl" />
-        <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-[500px] h-[500px] rounded-full bg-accent-400/10 blur-3xl" />
+      {/* Background image with white overlay for readability */}
+      <Image
+        src={IMAGES.hero}
+        alt=""
+        fill
+        className="object-cover"
+        priority
+        sizes="100vw"
+      />
+      <div className="absolute inset-0 bg-white/90" />
+
+      {/* Subtle gradient accents */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[600px] h-[600px] rounded-full bg-primary-200/30 blur-3xl" />
+        <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-[500px] h-[500px] rounded-full bg-accent-400/15 blur-3xl" />
       </div>
 
-      <Container>
+      <Container className="relative">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Left column */}
           <div>
@@ -50,11 +62,20 @@ export default function Hero() {
             </p>
           </div>
 
-          {/* Right column — abstract illustration */}
+          {/* Right column — card mockup with travel photo peek */}
           <div className="relative hidden lg:block">
             <div className="relative mx-auto w-full max-w-md">
-              {/* Gradient background blob */}
-              <div className="absolute inset-0 gradient-brand rounded-3xl opacity-10 blur-2xl scale-110" />
+              {/* Travel photo behind the card, slightly rotated */}
+              <div className="absolute -top-6 -right-6 w-56 h-72 rounded-2xl overflow-hidden shadow-xl opacity-50 rotate-3">
+                <Image
+                  src={IMAGES.travel}
+                  alt="European travel landscape"
+                  fill
+                  className="object-cover"
+                  sizes="224px"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary-950/40 to-transparent" />
+              </div>
 
               {/* Main card */}
               <div className="relative rounded-2xl bg-white p-8 shadow-2xl ring-1 ring-gray-100">
@@ -78,7 +99,7 @@ export default function Hero() {
                     <div>
                       <p className="text-sm font-medium text-text-primary">AI Extracted Data</p>
                       <p className="text-xs text-text-muted">
-                        Warsaw → Amsterdam &middot; &euro;127.50
+                        Warsaw &rarr; Amsterdam &middot; &euro;127.50
                       </p>
                     </div>
                   </div>
@@ -90,7 +111,7 @@ export default function Hero() {
                     </div>
                     <div>
                       <p className="text-sm font-medium text-text-primary">Ready for Review</p>
-                      <p className="text-xs text-text-muted">Auto-converted: PLN → EUR</p>
+                      <p className="text-xs text-text-muted">Auto-converted: PLN &rarr; EUR</p>
                     </div>
                   </div>
                 </div>

@@ -10,7 +10,9 @@ import {
 } from '@heroicons/react/24/outline';
 import Container from '@/components/ui/Container';
 import SectionHeading from '@/components/ui/SectionHeading';
+import PageHeader from '@/components/ui/PageHeader';
 import CTABanner from '@/components/sections/CTABanner';
+import { IMAGES } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'How It Works',
@@ -105,18 +107,15 @@ function StepCard({
 export default function HowItWorksPage() {
   return (
     <>
-      <section className="py-20 lg:py-28">
-        <Container>
-          <SectionHeading
-            title="How EasyReimburse Works"
-            subtitle="From project setup to final reports in a few simple steps."
-            gradient
-          />
-        </Container>
-      </section>
+      <PageHeader
+        title="How EasyReimburse Works"
+        subtitle="From project setup to final reports in a few simple steps."
+        imageSrc={IMAGES.howItWorks}
+        imageAlt="Travel planning with maps and documents"
+      />
 
       {/* For Organizations */}
-      <section className="pb-20 lg:pb-28">
+      <section className="py-20 lg:py-28">
         <Container>
           <SectionHeading title="For Organizations" />
           <div className="mx-auto max-w-2xl">
