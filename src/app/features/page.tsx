@@ -15,7 +15,9 @@ import {
 } from '@heroicons/react/24/outline';
 import Container from '@/components/ui/Container';
 import SectionHeading from '@/components/ui/SectionHeading';
+import PageHeader from '@/components/ui/PageHeader';
 import CTABanner from '@/components/sections/CTABanner';
+import { IMAGES } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'Features',
@@ -120,18 +122,15 @@ function FeatureCard({
 export default function FeaturesPage() {
   return (
     <>
-      <section className="py-20 lg:py-28">
-        <Container>
-          <SectionHeading
-            title="Powerful Features, Simple Experience"
-            subtitle="Everything you need to manage Erasmus+ travel reimbursements, from document capture to final reports."
-            gradient
-          />
-        </Container>
-      </section>
+      <PageHeader
+        title="Powerful Features, Simple Experience"
+        subtitle="Everything you need to manage Erasmus+ travel reimbursements, from document capture to final reports."
+        imageSrc={IMAGES.features}
+        imageAlt="Young people collaborating around a laptop"
+      />
 
       {/* For Organizations */}
-      <section className="pb-20 lg:pb-28">
+      <section className="py-20 lg:py-28">
         <Container>
           <SectionHeading
             title="For Organizations"

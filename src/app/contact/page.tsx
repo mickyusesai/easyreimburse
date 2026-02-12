@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import { EnvelopeIcon, ClockIcon } from '@heroicons/react/24/outline';
 import Container from '@/components/ui/Container';
-import SectionHeading from '@/components/ui/SectionHeading';
+import PageHeader from '@/components/ui/PageHeader';
 import ContactForm from '@/components/sections/ContactForm';
-import { SITE } from '@/lib/constants';
+import { SITE, IMAGES } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -13,14 +13,17 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <section className="py-20 lg:py-28">
-      <Container>
-        <SectionHeading
-          title="Get in Touch"
-          subtitle="Have a question or want to learn more? We'd love to hear from you."
-        />
+    <>
+      <PageHeader
+        title="Get in Touch"
+        subtitle="Have a question or want to learn more? We'd love to hear from you."
+        imageSrc={IMAGES.contact}
+        imageAlt="People having a friendly meeting"
+      />
 
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-5 lg:gap-16">
+      <section className="py-20 lg:py-28">
+        <Container>
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-5 lg:gap-16">
           {/* Contact form */}
           <div className="lg:col-span-3">
             <ContactForm />
@@ -75,5 +78,6 @@ export default function ContactPage() {
         </div>
       </Container>
     </section>
+    </>
   );
 }

@@ -2,10 +2,11 @@ import type { Metadata } from 'next';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import Container from '@/components/ui/Container';
 import SectionHeading from '@/components/ui/SectionHeading';
+import PageHeader from '@/components/ui/PageHeader';
 import Button from '@/components/ui/Button';
 import PricingTable from '@/components/sections/PricingTable';
 import CTABanner from '@/components/sections/CTABanner';
-import { ANNUAL_PLAN } from '@/lib/constants';
+import { ANNUAL_PLAN, IMAGES } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'Pricing',
@@ -39,12 +40,15 @@ const faqs = [
 export default function PricingPage() {
   return (
     <>
+      <PageHeader
+        title="Simple, Transparent Pricing"
+        subtitle="Start free. Scale as you grow. No hidden fees. No subscriptions required."
+        imageSrc={IMAGES.pricing}
+        imageAlt="European cityscape"
+      />
+
       <section className="py-20 lg:py-28">
         <Container>
-          <SectionHeading
-            title="Simple, Transparent Pricing"
-            subtitle="Start free. Scale as you grow. No hidden fees. No subscriptions required."
-          />
           <PricingTable />
 
           {/* Annual plan callout */}
