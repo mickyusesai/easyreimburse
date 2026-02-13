@@ -102,7 +102,7 @@ export const IMAGES = {
   hero: '/hero-rotterdam.png',
   features: '/features-rome.png',
   pricing: '/pricing-brussels.png',
-  howItWorks: '/how-it-works-barcelona.png',
+  howItWorks: '/extra-neuschwanstein.png',
   contact: '/contact-prague.png',
   travel: '/travel-bled.png',
   cta: '/cta-athens.png',
