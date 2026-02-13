@@ -24,8 +24,8 @@ export default function PageHeader({
         sizes="100vw"
       />
 
-      {/* Gradient overlay — purple-to-pink with strong opacity for readability */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-950/85 via-primary-900/80 to-accent-600/70" />
+      {/* Dark gradient overlay matching TravelBanner style */}
+      <div className="absolute inset-0 bg-gradient-to-r from-primary-950/90 via-primary-900/80 to-primary-950/70" />
 
       {/* Content */}
       <Container className="relative text-center">
@@ -33,7 +33,7 @@ export default function PageHeader({
           {title}
         </h1>
         {subtitle && (
-          <p className="mt-4 text-lg text-white/80 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-4 text-lg text-white/75 max-w-2xl mx-auto leading-relaxed">
             {subtitle}
           </p>
         )}

@@ -1,11 +1,22 @@
+import Image from 'next/image';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
-import { SITE } from '@/lib/constants';
+import { SITE, IMAGES } from '@/lib/constants';
 
 export default function CTABanner() {
   return (
-    <section className="py-20 lg:py-28 gradient-brand">
-      <Container className="text-center">
+    <section className="relative overflow-hidden py-20 lg:py-28">
+      {/* Background image */}
+      <Image
+        src={IMAGES.cta}
+        alt="The Parthenon in Athens"
+        fill
+        className="object-cover"
+        sizes="100vw"
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-primary-950/90 via-primary-900/85 to-accent-600/75" />
+
+      <Container className="relative text-center">
         <h2 className="text-3xl font-bold text-white sm:text-4xl">
           Ready to simplify your Erasmus+ reimbursements?
         </h2>

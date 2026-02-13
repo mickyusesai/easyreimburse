@@ -5,14 +5,13 @@ import {
   CheckCircleIcon,
 } from '@heroicons/react/24/outline';
 import Button from '@/components/ui/Button';
-import Badge from '@/components/ui/Badge';
 import Container from '@/components/ui/Container';
 import { SITE, IMAGES } from '@/lib/constants';
 
 export default function Hero() {
   return (
     <section className="relative overflow-hidden py-20 sm:py-28 lg:py-32">
-      {/* Background image with white overlay for readability */}
+      {/* Background image with dark overlay */}
       <Image
         src={IMAGES.hero}
         alt=""
@@ -21,28 +20,24 @@ export default function Hero() {
         priority
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-white/90" />
-
-      {/* Subtle gradient accents */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[600px] h-[600px] rounded-full bg-primary-200/30 blur-3xl" />
-        <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-[500px] h-[500px] rounded-full bg-accent-400/15 blur-3xl" />
-      </div>
+      <div className="absolute inset-0 bg-gradient-to-r from-primary-950/90 via-primary-900/80 to-primary-950/70" />
 
       <Container className="relative">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Left column */}
           <div>
-            <Badge variant="outline" className="mb-6">
+            <span className="inline-flex items-center rounded-full border border-primary-400/30 bg-white/10 px-3 py-1 text-xs font-semibold text-primary-200 backdrop-blur-sm">
               Built for Erasmus+ Youth Mobility
-            </Badge>
+            </span>
 
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+            <h1 className="mt-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
               Travel Reimbursements{' '}
-              <span className="gradient-text">From Weeks to Minutes</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-300 to-accent-400">
+                From Weeks to Minutes
+              </span>
             </h1>
 
-            <p className="mt-6 text-lg text-text-secondary leading-relaxed max-w-xl">
+            <p className="mt-6 text-lg text-white/70 leading-relaxed max-w-xl">
               EasyReimburse uses AI to automate travel reimbursement for Erasmus+ youth
               mobility projects. Participants upload their tickets. You get clean,
               compliant data. That&apos;s it.
@@ -52,66 +47,54 @@ export default function Hero() {
               <Button href={SITE.registerUrl} size="lg">
                 Start Free
               </Button>
-              <Button href="/how-it-works" variant="secondary" size="lg">
+              <Button href="/how-it-works" variant="outline" size="lg">
                 See How It Works
               </Button>
             </div>
 
-            <p className="mt-4 text-sm text-text-muted">
+            <p className="mt-4 text-sm text-white/50">
               Free for up to 10 participants. No credit card needed.
             </p>
           </div>
 
-          {/* Right column — card mockup with travel photo peek */}
+          {/* Right column — card mockup */}
           <div className="relative hidden lg:block">
             <div className="relative mx-auto w-full max-w-md">
-              {/* Travel photo behind the card, slightly rotated */}
-              <div className="absolute -top-6 -right-6 w-56 h-72 rounded-2xl overflow-hidden shadow-xl opacity-50 rotate-3">
-                <Image
-                  src={IMAGES.travel}
-                  alt="European travel landscape"
-                  fill
-                  className="object-cover"
-                  sizes="224px"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary-950/40 to-transparent" />
-              </div>
-
               {/* Main card */}
-              <div className="relative rounded-2xl bg-white p-8 shadow-2xl ring-1 ring-gray-100">
+              <div className="relative rounded-2xl bg-white/10 backdrop-blur-md p-8 ring-1 ring-white/20 shadow-2xl">
                 <div className="space-y-5">
                   {/* Upload indicator */}
-                  <div className="flex items-center gap-3 rounded-xl bg-primary-50 p-4">
+                  <div className="flex items-center gap-3 rounded-xl bg-white/10 p-4">
                     <div className="flex h-10 w-10 items-center justify-center rounded-lg gradient-brand">
                       <DocumentTextIcon className="h-5 w-5 text-white" />
                     </div>
                     <div>
-                      <p className="text-sm font-medium text-text-primary">boarding_pass.pdf</p>
-                      <p className="text-xs text-text-muted">Uploaded just now</p>
+                      <p className="text-sm font-medium text-white">boarding_pass.pdf</p>
+                      <p className="text-xs text-white/50">Uploaded just now</p>
                     </div>
                   </div>
 
                   {/* AI processing */}
-                  <div className="flex items-center gap-3 rounded-xl bg-accent-400/5 p-4">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent-500/10">
-                      <SparklesIcon className="h-5 w-5 text-accent-500" />
+                  <div className="flex items-center gap-3 rounded-xl bg-white/10 p-4">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent-500/20">
+                      <SparklesIcon className="h-5 w-5 text-accent-400" />
                     </div>
                     <div>
-                      <p className="text-sm font-medium text-text-primary">AI Extracted Data</p>
-                      <p className="text-xs text-text-muted">
+                      <p className="text-sm font-medium text-white">AI Extracted Data</p>
+                      <p className="text-xs text-white/50">
                         Warsaw &rarr; Amsterdam &middot; &euro;127.50
                       </p>
                     </div>
                   </div>
 
                   {/* Approved */}
-                  <div className="flex items-center gap-3 rounded-xl bg-green-50 p-4">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-100">
-                      <CheckCircleIcon className="h-5 w-5 text-green-600" />
+                  <div className="flex items-center gap-3 rounded-xl bg-white/10 p-4">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-500/20">
+                      <CheckCircleIcon className="h-5 w-5 text-green-400" />
                     </div>
                     <div>
-                      <p className="text-sm font-medium text-text-primary">Ready for Review</p>
-                      <p className="text-xs text-text-muted">Auto-converted: PLN &rarr; EUR</p>
+                      <p className="text-sm font-medium text-white">Ready for Review</p>
+                      <p className="text-xs text-white/50">Auto-converted: PLN &rarr; EUR</p>
                     </div>
                   </div>
                 </div>
