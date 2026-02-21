@@ -86,7 +86,7 @@ const participantFeatures = [
   {
     title: 'Photo Upload',
     description:
-      'Just photograph your ticket or boarding pass with your phone. The AI handles extracting all the relevant data.',
+      'Just upload your ticket or boarding pass from your phone. The AI handles extracting all the relevant data and lets you know what\'s still missing.',
     icon: CameraIcon,
   },
   {

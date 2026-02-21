@@ -3,7 +3,8 @@ export const SITE = {
   tagline: 'AI-Powered Travel Reimbursement for Erasmus+',
   url: 'https://easyreimburse.ai',
   appUrl: 'https://app.easyreimburse.ai',
-  registerUrl: 'https://app.easyreimburse.ai/register',
+  registerUrl: 'https://app.easyreimburse.ai/org/register',
+  loginUrl: 'https://app.easyreimburse.ai/org/login',
   contactEmail: 'contact@easyreimburse.ai',
   description:
     'Automate travel reimbursement for Erasmus+ youth mobility projects. AI-powered document processing. From weeks to minutes.',
@@ -29,7 +30,7 @@ export const PRICING_PLANS = [
       'AI document processing',
       'Data export',
     ],
-    cta: 'Start Free',
+    cta: 'Try for Free',
     ctaHref: SITE.registerUrl,
     highlighted: false,
     badge: null,

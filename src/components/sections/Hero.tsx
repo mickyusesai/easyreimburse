@@ -23,7 +23,7 @@ export default function Hero() {
         </span>
 
         <h1 className="mt-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-          Travel Reimbursements{' '}
+          Travel Reimbursements<br className="hidden lg:block" />{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-300 to-accent-400">
             From Weeks to Minutes
           </span>
@@ -37,7 +37,7 @@ export default function Hero() {
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
           <Button href={SITE.registerUrl} size="lg">
-            Start Free
+            Try for Free
           </Button>
           <Button href="/how-it-works" variant="outline" size="lg">
             See How It Works
@@ -45,7 +45,7 @@ export default function Hero() {
         </div>
 
         <p className="mt-4 text-sm text-white/50">
-          Free for up to 10 participants. No credit card needed.
+          Try it out first for up to 10 participants.
         </p>
       </Container>
     </section>

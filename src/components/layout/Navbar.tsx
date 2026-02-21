@@ -56,8 +56,14 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
+          <a
+            href={SITE.loginUrl}
+            className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors"
+          >
+            Log in
+          </a>
           <Button href={SITE.registerUrl} size="sm">
-            Start Free
+            Try for Free
           </Button>
         </div>
 
@@ -88,9 +94,15 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <a
+              href={SITE.loginUrl}
+              className="block rounded-lg px-3 py-2.5 text-base font-medium text-text-secondary hover:bg-gray-50 hover:text-text-primary transition-colors"
+            >
+              Log in
+            </a>
             <div className="pt-3">
               <Button href={SITE.registerUrl} className="w-full">
-                Start Free
+                Try for Free
               </Button>
             </div>
           </div>

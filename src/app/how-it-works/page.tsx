@@ -30,23 +30,23 @@ const orgSteps = [
   },
   {
     number: '2',
-    title: 'Invite Participants',
+    title: 'Add Participants',
     description:
-      'Add participants manually, import via CSV, or share a self-registration link. Each participant gets a unique magic link — no complicated onboarding needed.',
+      'Add participants manually one by one or import them via CSV. Each participant gets a unique magic link — no complicated onboarding needed.',
     icon: UserGroupIcon,
   },
   {
     number: '3',
     title: 'AI Processes Documents',
     description:
-      'As participants upload photos of their travel documents, our dual AI system automatically extracts routes, dates, costs, and distances. Review the extracted data and approve with a click.',
+      'As participants upload their travel documents, our dual AI system automatically extracts routes, dates, costs, and distances. It also lets participants know what\'s still missing.',
     icon: SparklesIcon,
   },
   {
     number: '4',
-    title: 'Export Your Data',
+    title: 'AI Review for Organisations',
     description:
-      'Download clean, structured reimbursement data as spreadsheets. Currency conversions are done automatically using official EU rates. Ready for your National Agency report.',
+      'The AI reviews all the files and lets you know what still needs to be manually checked. Once approved you can download an Audit PDF when needed for the national agency. Currency conversions are done automatically using official EU rates.',
     icon: DocumentArrowDownIcon,
   },
 ];
@@ -63,7 +63,7 @@ const participantSteps = [
     number: '2',
     title: 'Upload Your Documents',
     description:
-      'Take photos of boarding passes, train tickets, bus tickets, or invoices. Upload them directly from your phone. The AI reads your documents and extracts the data.',
+      'Upload boarding passes, train tickets, bus tickets, or invoices directly from your phone. The AI reads your documents, extracts the data, and lets you know what\'s still missing.',
     icon: CameraIcon,
   },
   {

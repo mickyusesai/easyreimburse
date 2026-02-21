@@ -1,7 +1,7 @@
 import {
   PlusCircleIcon,
   CameraIcon,
-  DocumentArrowDownIcon,
+  ShieldCheckIcon,
 } from '@heroicons/react/24/outline';
 import Container from '@/components/ui/Container';
 import SectionHeading from '@/components/ui/SectionHeading';
@@ -12,22 +12,22 @@ const steps = [
     number: '1',
     title: 'Create Your Project',
     description:
-      'Set up your mobility project in minutes. Import participants via CSV or let them self-register with a shared link.',
+      'Set up your mobility project in minutes. Import participants via CSV or add them manually one by one.',
     icon: PlusCircleIcon,
   },
   {
     number: '2',
     title: 'Participants Upload Documents',
     description:
-      'Participants photograph boarding passes, tickets, and invoices. AI extracts all the data automatically.',
+      'Participants upload boarding passes, tickets, and invoices. AI extracts all the data automatically and lets them know what\'s still missing.',
     icon: CameraIcon,
   },
   {
     number: '3',
-    title: 'Download Clean Reports',
+    title: 'AI Review for Organisations',
     description:
-      'Get organized, compliant reimbursement data ready for your National Agency submission. Hours of work done in minutes.',
-    icon: DocumentArrowDownIcon,
+      'The AI reviews all the files and lets you know what still needs to be manually checked. Once approved you can download an Audit PDF when needed for the national agency.',
+    icon: ShieldCheckIcon,
   },
 ];
 

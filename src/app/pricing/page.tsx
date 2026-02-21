@@ -11,7 +11,7 @@ import { ANNUAL_PLAN, IMAGES } from '@/lib/constants';
 export const metadata: Metadata = {
   title: 'Pricing',
   description:
-    'Simple, transparent pricing for Erasmus+ travel reimbursement. Start free with up to 10 participants.',
+    'Simple, transparent pricing for Erasmus+ travel reimbursement. Try for free with up to 10 participants.',
 };
 
 const faqs = [
@@ -35,6 +35,10 @@ const faqs = [
     q: 'Do credits expire?',
     a: 'No. Project credits never expire. Use them whenever you need them, even if that\'s months or years after purchase.',
   },
+  {
+    q: 'How much energy does EasyReimburse use?',
+    a: 'Though many people think AI takes enormous amounts of energy, for a project of 50 people with all AI tools embedded in our software, the estimated energy use is only 1 kWh. That equals only half a day of laptop usage. And exactly that — using your laptop for such a long time — is what you don\'t have to do anymore if you have EasyReimburse.',
+  },
 ];
 
 export default function PricingPage() {
@@ -42,7 +46,7 @@ export default function PricingPage() {
     <>
       <PageHeader
         title="Simple, Transparent Pricing"
-        subtitle="Start free. Scale as you grow. No hidden fees. No subscriptions required."
+        subtitle="Try for free. Scale as you grow. No hidden fees. No subscriptions required."
         imageSrc={IMAGES.pricing}
         imageAlt="European cityscape"
       />
