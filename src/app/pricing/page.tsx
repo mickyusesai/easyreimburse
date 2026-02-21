@@ -25,7 +25,11 @@ const faqs = [
   },
   {
     q: 'Is there a per-participant fee?',
-    a: 'No. All paid plans include unlimited participants. You only pay per project, not per person.',
+    a: 'No. You only pay per project, not per person. Each paid project supports up to 60 participants.',
+  },
+  {
+    q: 'What if my project has more than 60 participants?',
+    a: 'If your project has more than 60 participants, you can use an additional project credit. Our pricing is structured this way to keep it fair for everyone and to prevent misuse of the software. Most Erasmus+ youth mobility projects fall well within the 60-participant limit.',
   },
   {
     q: 'What payment methods do you accept?',

@@ -12,6 +12,8 @@ import {
   EyeIcon,
   BanknotesIcon,
   ChatBubbleLeftRightIcon,
+  ClipboardDocumentCheckIcon,
+  DocumentTextIcon,
 } from '@heroicons/react/24/outline';
 import Container from '@/components/ui/Container';
 import SectionHeading from '@/components/ui/SectionHeading';
@@ -73,6 +75,18 @@ const orgFeatures = [
     description:
       'Automatically notify participants when documents are missing or need corrections. No more sending individual emails or messages.',
     icon: ChatBubbleLeftRightIcon,
+  },
+  {
+    title: 'AI Reviewer',
+    description:
+      'Our AI reviewer checks every participant\'s reimbursement and gives you a clear overview of what should still be manually checked, saving you days of work on every project.',
+    icon: ClipboardDocumentCheckIcon,
+  },
+  {
+    title: 'One-Click NA Audit PDF',
+    description:
+      'Once all reimbursements are approved, download a complete Audit PDF ready for your National Agency. All data, documents, and declarations compiled in one click.',
+    icon: DocumentTextIcon,
   },
 ];
 
