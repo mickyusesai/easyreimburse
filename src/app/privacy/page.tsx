@@ -64,7 +64,7 @@ export default function PrivacyPage() {
             via magic links, the following data is processed:
           </p>
           <ul>
-            <li>Name and email address (provided by the organization or during self-registration)</li>
+            <li>Name and email address (provided by the organization)</li>
             <li>Travel documents (boarding passes, tickets, invoices — uploaded as images or PDFs)</li>
             <li>Extracted travel data (routes, dates, amounts, flight numbers)</li>
             <li>Bank details (IBAN) for reimbursement purposes</li>

@@ -26,12 +26,12 @@ export default function TravelBanner() {
           </h2>
           <p className="mt-4 text-lg text-white/80 leading-relaxed">
             EasyReimburse was built by an organization that runs youth exchanges and training
-            courses across Europe. We didn&apos;t just study the problem &mdash; we lived it.
-            Every feature exists because we needed it ourselves.
+            courses across Europe. We know what problems organisations run into and we made
+            every feature because we simply needed it.
           </p>
           <div className="mt-8">
             <Button href={SITE.registerUrl} variant="outline" size="lg">
-              Try It Free
+              Try for Free
             </Button>
           </div>
         </div>

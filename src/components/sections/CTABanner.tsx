@@ -21,11 +21,11 @@ export default function CTABanner() {
           Ready to simplify your Erasmus+ reimbursements?
         </h2>
         <p className="mt-4 text-lg text-white/80 max-w-xl mx-auto">
-          Start for free with up to 10 participants. No credit card required.
+          Try it out first for up to 10 participants.
         </p>
         <div className="mt-8">
           <Button href={SITE.registerUrl} variant="outline" size="lg">
-            Start Free
+            Try for Free
           </Button>
         </div>
       </Container>
