@@ -94,16 +94,6 @@ export const PRICING_PLANS = [
   },
 ] as const;
 
-export const ANNUAL_PLAN = {
-  name: 'Annual License',
-  price: 995,
-  unit: '/year',
-  description:
-    'Unlimited projects for a full year. Best for organizations with ongoing Erasmus+ activities.',
-  cta: 'Contact Us',
-  ctaHref: '/contact',
-} as const;
-
 export const IMAGES = {
   hero: '/hero-rotterdam.png',
   features: '/features-rome.png',
