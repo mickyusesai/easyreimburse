@@ -1,4 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
+import * as postmark from 'postmark';
+
+const client = new postmark.ServerClient(
+  process.env.POSTMARK_SERVER_TOKEN || '',
+);
 
 export async function POST(req: NextRequest) {
   try {
@@ -20,15 +25,21 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // TODO: Integrate email service (Resend, SendGrid, etc.)
-    // For now, log the submission server-side
-    console.log('Contact form submission:', {
-      name,
-      email,
-      organization: body.organization || '',
-      subject,
-      message,
-      timestamp: new Date().toISOString(),
+    const organization = body.organization || 'Not provided';
+
+    await client.sendEmail({
+      From: 'micky@easyreimburse.ai',
+      To: 'micky@easyreimburse.ai',
+      ReplyTo: email,
+      Subject: `[Contact Form] ${subject}`,
+      TextBody: [
+        `Name: ${name}`,
+        `Email: ${email}`,
+        `Organization: ${organization}`,
+        ``,
+        `Message:`,
+        message,
+      ].join('\n'),
     });
 
     return NextResponse.json({ success: true });
