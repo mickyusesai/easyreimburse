@@ -6,7 +6,7 @@ import PageHeader from '@/components/ui/PageHeader';
 import Button from '@/components/ui/Button';
 import PricingTable from '@/components/sections/PricingTable';
 import CTABanner from '@/components/sections/CTABanner';
-import { ANNUAL_PLAN, IMAGES } from '@/lib/constants';
+import { IMAGES } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'Pricing',
@@ -59,17 +59,15 @@ export default function PricingPage() {
         <Container>
           <PricingTable />
 
-          {/* Annual plan callout */}
+          {/* Custom needs callout */}
           <div className="mt-12 rounded-2xl gradient-brand p-8 lg:p-10 text-center">
-            <h3 className="text-2xl font-bold text-white">{ANNUAL_PLAN.name}</h3>
-            <p className="mt-2 text-4xl font-bold text-white">
-              &euro;{ANNUAL_PLAN.price}
-              <span className="text-lg font-normal text-white/70">{ANNUAL_PLAN.unit}</span>
+            <h3 className="text-2xl font-bold text-white">Need a custom solution?</h3>
+            <p className="mt-3 text-white/80 max-w-md mx-auto">
+              Running a large number of projects or have specific requirements? Get in touch and we&apos;ll find the right setup for your organisation.
             </p>
-            <p className="mt-3 text-white/80 max-w-md mx-auto">{ANNUAL_PLAN.description}</p>
             <div className="mt-6">
-              <Button href={ANNUAL_PLAN.ctaHref} variant="outline">
-                {ANNUAL_PLAN.cta}
+              <Button href="/contact" variant="outline">
+                Contact Us
               </Button>
             </div>
           </div>
