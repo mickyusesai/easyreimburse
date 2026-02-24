@@ -42,10 +42,9 @@ export default function PrivacyPage() {
             <a href={SITE.appUrl}>{SITE.appUrl}</a> and our marketing website at{' '}
             <a href={SITE.url}>{SITE.url}</a>.
           </p>
-          {/* TODO: Replace with actual legal entity details */}
           <p>
-            <strong>Data Controller:</strong> [Your Legal Entity Name], [Registered Address],
-            [Country]. Contact: <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>.
+            <strong>Data Controller:</strong> EasyReimburse, Hooftstraat 117B, 3314 BC, Dordrecht,
+            The Netherlands. Contact: <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a>.
           </p>
 
           <h2 id="data-we-collect">2. Data We Collect</h2>
@@ -171,8 +170,7 @@ export default function PrivacyPage() {
           </p>
           <ul>
             <li>Email: <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a></li>
-            {/* TODO: Add physical address */}
-            <li>Address: [Your Registered Address]</li>
+            <li>Address: Hooftstraat 117B, 3314 BC, Dordrecht, The Netherlands</li>
           </ul>
         </div>
       </Container>
