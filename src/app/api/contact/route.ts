@@ -1,9 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
-import * as postmark from 'postmark';
+import { ServerClient } from 'postmark';
 
-const client = new postmark.ServerClient(
-  process.env.POSTMARK_SERVER_TOKEN || '',
-);
+function getClient() {
+  const token = process.env.POSTMARK_SERVER_TOKEN;
+  if (!token) throw new Error('POSTMARK_SERVER_TOKEN is not set');
+  return new ServerClient(token);
+}
 
 export async function POST(req: NextRequest) {
   try {
@@ -27,7 +29,7 @@ export async function POST(req: NextRequest) {
 
     const organization = body.organization || 'Not provided';
 
-    await client.sendEmail({
+    await getClient().sendEmail({
       From: 'micky@easyreimburse.ai',
       To: 'micky@easyreimburse.ai',
       ReplyTo: email,

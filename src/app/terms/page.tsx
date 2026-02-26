@@ -94,14 +94,13 @@ export default function TermsPage() {
 
           <h2 id="payment">6. Payment Terms</h2>
           <p>
-            Paid features are available through project credits or annual licenses. Key terms:
+            Paid features are available through project credits. Key terms:
           </p>
           <ul>
             <li>Prices are listed in euros (EUR) and are inclusive of applicable taxes unless stated otherwise.</li>
             <li>Payments are processed securely via Stripe.</li>
             <li>Project credits never expire.</li>
             <li>Refunds are handled on a case-by-case basis. Contact us within 14 days of purchase if you need a refund for an unused credit.</li>
-            <li>Annual licenses are non-refundable after 14 days.</li>
           </ul>
 
           <h2 id="free-tier">7. Free Tier</h2>
@@ -166,10 +165,9 @@ export default function TermsPage() {
           </ul>
 
           <h2 id="law">13. Governing Law</h2>
-          {/* TODO: Replace with actual jurisdiction */}
           <p>
-            These terms are governed by the laws of [Your Country/Jurisdiction]. Any disputes
-            shall be resolved in the courts of [Your City, Country].
+            These terms are governed by the laws of The Netherlands. Any disputes
+            shall be resolved in the courts of Dordrecht, The Netherlands.
           </p>
 
           <h2 id="changes">14. Changes to Terms</h2>
