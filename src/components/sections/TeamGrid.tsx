@@ -89,14 +89,14 @@ const team = [
     name: 'Micky van Zadelhoff',
     role: 'Founder & Chief Reimbursement Liberator',
     bio: 'Has facilitated more Erasmus+ projects across The Netherlands, France, and Lithuania than he\'s had hot dinners — and wrote the book Digital Nomad to prove he never sits still. Firmly believes AI will change the world as we know it, starting with the dark, unglamorous corner of travel reimbursements. Loves Europe, its values, and the dream that no project coordinator should ever have to manually type a flight number again.',
-    image: '/team-micky.jpg',
+    image: '/team-micky1.jpg',
     type: 'human' as const,
   },
   {
     name: 'Elaine de Zanger',
     role: 'Head of Making You Say Yes',
     bio: 'Will find you, contact you, and kindly explain why your Erasmus+ reimbursement workflow is a crime against your own free time. Supernaturally social — the kind of person who sends Christmas cards to her dentist. When she\'s not convincing organisations to join the future, she\'s engraving glass by hand, which means her gifts are always more thoughtful than yours. Don\'t take it personally.',
-    image: '/team-elaine.jpg',
+    image: '/team-elaine1.jpg',
     type: 'human' as const,
   },
   {
