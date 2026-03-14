@@ -71,36 +71,40 @@ export default function HowItWorksPreview() {
           href={WEBINAR_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="group mt-16 block rounded-2xl overflow-hidden ring-1 ring-gray-200 shadow-xl relative aspect-video"
+          className="group mt-16 mx-auto max-w-3xl block rounded-2xl overflow-hidden ring-1 ring-gray-200 shadow-xl"
         >
-          <Image
-            src="/webinar-easyreimburse.png"
-            alt="EasyReimburse live demo webinar"
-            fill
-            className="object-cover transition-transform duration-300 group-hover:scale-105"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-black/30 transition-opacity duration-300 group-hover:bg-black/20" />
+          <div className="relative aspect-video">
+            <Image
+              src="/webinar-easyreimburse.png"
+              alt="EasyReimburse live demo webinar"
+              fill
+              className="object-cover transition-transform duration-300 group-hover:scale-105"
+              sizes="(max-width: 768px) 100vw, 768px"
+            />
+            <div className="absolute inset-0 bg-black/30 transition-opacity duration-300 group-hover:bg-black/20" />
 
-          {/* Play button */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
-            <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white/90 shadow-2xl transition-transform duration-300 group-hover:scale-110">
-              <svg
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="h-8 w-8 text-primary-600 ml-1"
-              >
-                <path d="M8 5v14l11-7z" />
-              </svg>
+            {/* Play button */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-full bg-white/90 shadow-2xl transition-transform duration-300 group-hover:scale-110">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="h-7 w-7 text-primary-600 ml-1"
+                >
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
             </div>
-            <div className="text-center px-4">
-              <p className="text-white text-xl font-bold sm:text-2xl drop-shadow-lg">
-                Watch the Live Demo
-              </p>
-              <p className="text-white/80 text-sm sm:text-base mt-1 drop-shadow-lg">
-                See exactly how EasyReimburse works from minute 20 — no registration needed
-              </p>
-            </div>
+          </div>
+
+          {/* Text below the image */}
+          <div className="bg-white px-6 py-4 text-center">
+            <p className="text-lg font-semibold text-text-primary group-hover:text-primary-600 transition-colors">
+              Watch the Live Demo
+            </p>
+            <p className="text-sm text-text-secondary mt-1">
+              See exactly how EasyReimburse works from minute 20 — no registration needed
+            </p>
           </div>
         </a>
 
