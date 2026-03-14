@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import {
   PlusCircleIcon,
   CameraIcon,
@@ -6,6 +7,9 @@ import {
 import Container from '@/components/ui/Container';
 import SectionHeading from '@/components/ui/SectionHeading';
 import Button from '@/components/ui/Button';
+
+const WEBINAR_URL =
+  'https://demodernenomaden.webinargeek.com/watch/replay/5881946/4e1321d1207d3ec61d9cbb388f53c2e7/';
 
 const steps = [
   {
@@ -61,6 +65,44 @@ export default function HowItWorksPreview() {
             </div>
           ))}
         </div>
+
+        {/* Webinar demo */}
+        <a
+          href={WEBINAR_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group mt-16 block rounded-2xl overflow-hidden ring-1 ring-gray-200 shadow-xl relative aspect-video"
+        >
+          <Image
+            src="/webinar-easyreimburse.png"
+            alt="EasyReimburse live demo webinar"
+            fill
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-black/30 transition-opacity duration-300 group-hover:bg-black/20" />
+
+          {/* Play button */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
+            <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white/90 shadow-2xl transition-transform duration-300 group-hover:scale-110">
+              <svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="h-8 w-8 text-primary-600 ml-1"
+              >
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+            <div className="text-center px-4">
+              <p className="text-white text-xl font-bold sm:text-2xl drop-shadow-lg">
+                Watch the Live Demo
+              </p>
+              <p className="text-white/80 text-sm sm:text-base mt-1 drop-shadow-lg">
+                See exactly how EasyReimburse works from minute 20 — no registration needed
+              </p>
+            </div>
+          </div>
+        </a>
 
         <div className="mt-12 text-center">
           <Button href="/how-it-works" variant="secondary">
