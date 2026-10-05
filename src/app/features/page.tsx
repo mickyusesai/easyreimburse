@@ -311,7 +311,7 @@ export default function FeaturesPage() {
       ))}
 
       {/* Green travel */}
-      <section id="green-travel" className="scroll-mt-20 py-20 lg:py-28 bg-gradient-to-br from-green-50 via-white to-primary-50">
+      <section id="green-travel" className="scroll-mt-20 py-20 lg:py-28 bg-gradient-to-br from-green-100 via-green-50 to-primary-50">
         <Container>
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16 items-center">
             <div>
@@ -336,20 +336,22 @@ export default function FeaturesPage() {
               </ul>
             </div>
             <div className="relative pb-16 sm:pb-24">
-              <Image
-                src={SCREENSHOTS.oParticipantJonasBrowser.src}
-                width={SCREENSHOTS.oParticipantJonasBrowser.width}
-                height={SCREENSHOTS.oParticipantJonasBrowser.height}
-                alt="Organiser view of a green traveller: receipts grouped by day with totals and the green travel extra"
-                className="w-full h-auto"
-                sizes="(max-width: 1024px) 100vw, 600px"
-              />
+              {/* Only the top of this screen has content, so show that part in a cropped window */}
+              <div className="relative aspect-[1400/640] overflow-hidden rounded-2xl bg-white shadow-2xl shadow-green-900/20 ring-1 ring-black/5">
+                <Image
+                  src={SCREENSHOTS.oParticipantJonasBrowser.src}
+                  fill
+                  alt="Organiser view of a green traveller: receipts grouped by day with totals and the green travel extra"
+                  className="object-cover object-top scale-[1.06]"
+                  sizes="(max-width: 1024px) 100vw, 600px"
+                />
+              </div>
               <Image
                 src={SCREENSHOTS.pStep2CostLenaPhone.src}
                 width={SCREENSHOTS.pStep2CostLenaPhone.width}
                 height={SCREENSHOTS.pStep2CostLenaPhone.height}
                 alt="Participant cost breakdown with food and accommodation to be added"
-                className="absolute bottom-0 left-0 w-32 sm:w-44 h-auto drop-shadow-2xl"
+                className="absolute -bottom-2 left-4 w-32 sm:w-44 h-auto drop-shadow-2xl"
                 sizes="176px"
               />
             </div>

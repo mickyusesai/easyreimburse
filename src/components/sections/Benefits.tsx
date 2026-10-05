@@ -55,7 +55,7 @@ export default function Benefits() {
             <div key={benefit.title} className="rounded-2xl bg-white p-6 lg:p-8 ring-1 ring-gray-100 shadow-sm hover:shadow-md transition-shadow">
               <div className="flex items-center gap-4">
                 <div className="relative h-16 w-16 shrink-0">
-                  <Image src={benefit.image} alt="" fill className="object-contain" sizes="64px" />
+                  <Image src={benefit.image} alt="" fill className="object-contain mix-blend-multiply" sizes="64px" />
                 </div>
                 <h3 className="text-xl font-semibold text-text-primary">{benefit.title}</h3>
               </div>

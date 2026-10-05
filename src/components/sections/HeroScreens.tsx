@@ -15,7 +15,7 @@ export default function HeroScreens() {
           width={wide.width}
           height={wide.height}
           alt="The participant app: upload documents, check AI-built trip cards, confirm and submit"
-          className="hidden md:block mx-auto w-full max-w-5xl h-auto rounded-[2rem] shadow-2xl shadow-primary-900/40"
+          className="hidden md:block mx-auto w-full max-w-5xl h-auto rounded-[2rem] ring-8 ring-white shadow-2xl shadow-primary-900/40"
           sizes="(max-width: 1024px) 100vw, 1024px"
           priority
         />

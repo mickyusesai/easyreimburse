@@ -59,10 +59,10 @@ export default function SocialProof() {
           {testimonials.map((t, i) => (
             <div
               key={i}
-              className="rounded-2xl bg-white p-6 lg:p-8 ring-1 ring-gray-100 shadow-sm"
+              className="flex flex-col rounded-2xl bg-white p-6 lg:p-8 ring-1 ring-gray-100 shadow-sm"
             >
               <div className="text-4xl text-primary-200 leading-none mb-3">&ldquo;</div>
-              <p className="text-text-secondary italic leading-relaxed text-sm">{t.quote}</p>
+              <p className="flex-1 text-text-secondary italic leading-relaxed text-sm">{t.quote}</p>
               <div className="mt-5 flex items-center gap-3">
                 <Image
                   src={t.photo}

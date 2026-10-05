@@ -12,7 +12,7 @@ export default function PricingTable() {
         <Card key={plan.name} highlighted={plan.highlighted} className="flex flex-col">
           <div className="flex-1">
             <div className="relative -mt-2 mb-4 h-28">
-              <Image src={plan.image} alt="" fill className="object-contain object-left" sizes="112px" />
+              <Image src={plan.image} alt="" fill className="object-contain object-left mix-blend-multiply" sizes="112px" />
               {plan.badge && (
                 <Badge className="absolute right-0 top-2">{plan.badge}</Badge>
               )}
