@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Button from '@/components/ui/Button';
 
 type FormState = 'idle' | 'submitting' | 'success' | 'error';
@@ -16,6 +16,14 @@ const subjects = [
 export default function ContactForm() {
   const [state, setState] = useState<FormState>('idle');
   const [errorMsg, setErrorMsg] = useState('');
+  const subjectRef = useRef<HTMLSelectElement>(null);
+
+  // Preselect the subject from ?subject=... (e.g. the footer's "Partner programme" link)
+  useEffect(() => {
+    const wanted = new URLSearchParams(window.location.search).get('subject')?.toLowerCase();
+    const match = subjects.find((s) => s.toLowerCase() === wanted);
+    if (match && subjectRef.current) subjectRef.current.value = match;
+  }, []);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -117,6 +125,7 @@ export default function ContactForm() {
           Subject <span className="text-accent-500">*</span>
         </label>
         <select
+          ref={subjectRef}
           id="subject"
           name="subject"
           required

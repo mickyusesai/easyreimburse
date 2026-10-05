@@ -11,6 +11,7 @@ const productLinks = [
 const companyLinks = [
   { label: 'Team', href: '/team' },
   { label: 'Contact', href: '/contact' },
+  { label: 'Partner programme', href: '/contact?subject=partnership' },
   { label: 'Privacy Policy', href: '/privacy' },
   { label: 'Terms of Service', href: '/terms' },
 ];

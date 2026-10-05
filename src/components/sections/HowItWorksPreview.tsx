@@ -1,9 +1,4 @@
 import Image from 'next/image';
-import {
-  PlusCircleIcon,
-  CameraIcon,
-  ShieldCheckIcon,
-} from '@heroicons/react/24/outline';
 import Container from '@/components/ui/Container';
 import SectionHeading from '@/components/ui/SectionHeading';
 import Button from '@/components/ui/Button';
@@ -17,21 +12,21 @@ const steps = [
     title: 'Create Your Project',
     description:
       'Set up your mobility project in minutes. Import participants via CSV or add them manually one by one.',
-    icon: PlusCircleIcon,
+    image: '/illustrations/step-create.webp',
   },
   {
     number: '2',
     title: 'Participants Upload Documents',
     description:
-      'Participants upload boarding passes, tickets, and invoices. AI extracts all the data automatically and lets them know what\'s still missing.',
-    icon: CameraIcon,
+      'Participants upload boarding passes, tickets and invoices as they get them, even during the project. When the project ends the AI builds their trips; they confirm each one, sign any declaration and add bank details.',
+    image: '/illustrations/step-upload.webp',
   },
   {
     number: '3',
     title: 'AI Review for Organisations',
     description:
       'The AI reviews all the files and lets you know what still needs to be manually checked. Once approved you can download an Audit PDF when needed for the national agency.',
-    icon: ShieldCheckIcon,
+    image: '/illustrations/step-review.webp',
   },
 ];
 
@@ -49,11 +44,12 @@ export default function HowItWorksPreview() {
             <div key={step.number} className="relative text-center">
               {/* Connector line (hidden on mobile, between cards on desktop) */}
               {i < steps.length - 1 && (
-                <div className="absolute top-8 left-1/2 hidden w-full border-t-2 border-dashed border-primary-200 md:block" />
+                <div className="absolute top-24 left-1/2 hidden w-full border-t-2 border-dashed border-primary-200 md:block" />
               )}
 
-              <div className="relative">
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl gradient-brand text-white text-xl font-bold shadow-lg shadow-primary-500/20">
+              <div className="relative mx-auto h-48 w-48">
+                <Image src={step.image} alt="" fill className="object-contain rounded-full bg-white" sizes="192px" />
+                <div className="absolute -top-1 -left-1 flex h-11 w-11 items-center justify-center rounded-xl gradient-brand text-white text-lg font-bold shadow-lg shadow-primary-500/20">
                   {step.number}
                 </div>
               </div>
