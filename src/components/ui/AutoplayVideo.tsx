@@ -69,10 +69,11 @@ export default function AutoplayVideo({
       <button
         type="button"
         onClick={toggleSound}
-        className="absolute right-3 top-3 inline-flex items-center gap-1.5 rounded-full bg-black/60 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur-sm transition hover:bg-black/75"
+        aria-label={muted ? 'Turn sound on' : 'Turn sound off'}
+        className="absolute right-2 top-2 sm:right-3 sm:top-3 inline-flex items-center gap-1.5 rounded-full bg-black/60 p-2 sm:px-3 sm:py-1.5 text-xs font-semibold text-white backdrop-blur-sm transition hover:bg-black/75"
       >
         {muted ? <SpeakerXMarkIcon className="h-4 w-4" /> : <SpeakerWaveIcon className="h-4 w-4" />}
-        {muted ? 'Sound on' : 'Sound off'}
+        <span className="hidden sm:inline">{muted ? 'Sound on' : 'Sound off'}</span>
       </button>
     </div>
   );
