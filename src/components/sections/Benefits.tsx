@@ -69,9 +69,9 @@ export default function Benefits() {
           ))}
 
           {/* Green travel gets a full-width card: it is the topic coordinators search for most */}
-          <div className="sm:col-span-2 lg:col-span-3 rounded-2xl bg-white p-6 lg:p-8 ring-2 ring-green-500/30 shadow-sm hover:shadow-md transition-shadow grid grid-cols-1 md:grid-cols-[14rem_1fr] gap-6 items-center">
-            <div className="relative h-48 md:h-52">
-              <Image src={greenTravel.image} alt="" fill className="object-contain" sizes="(max-width: 768px) 90vw, 224px" />
+          <div className="sm:col-span-2 lg:col-span-3 rounded-2xl bg-white p-6 lg:p-8 ring-2 ring-green-500/30 shadow-sm hover:shadow-md transition-shadow grid grid-cols-1 md:grid-cols-[14rem_1fr] md:gap-10 gap-6 items-center">
+            <div className="relative mx-auto h-56 w-56 rounded-2xl overflow-hidden ring-1 ring-green-200">
+              <Image src={greenTravel.image} alt="" fill className="object-cover" sizes="224px" />
             </div>
             <div>
               <span className="inline-flex rounded-full bg-green-50 px-3 py-1 text-xs font-semibold text-green-700 ring-1 ring-green-200">

@@ -204,7 +204,7 @@ const participantFeatures: Feature[] = [
 
 function FeatureCard({ feature }: { feature: Feature }) {
   return (
-    <div className="rounded-2xl bg-white p-6 ring-1 ring-gray-100 shadow-sm hover:shadow-md transition-shadow">
+    <div className="rounded-2xl bg-white p-6 ring-1 ring-gray-100 shadow-sm hover:shadow-md transition-shadow sm:[&:last-child:nth-child(odd)]:col-span-2">
       <div className="flex items-center gap-3">
         <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl gradient-brand">
           <feature.icon className="h-5 w-5 text-white" />
@@ -270,7 +270,7 @@ export default function FeaturesPage() {
         <Container>
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-[22rem_1fr] lg:gap-16 items-center">
             <div className="text-center lg:text-left">
-              <div className="relative mx-auto lg:mx-0 h-72 w-72 rounded-[2.5rem] bg-white overflow-hidden ring-8 ring-white/10">
+              <div className="relative mx-auto lg:mx-0 h-56 w-56 lg:h-72 lg:w-72 rounded-[2.5rem] bg-white overflow-hidden ring-8 ring-white/10">
                 <Image src="/illustrations/participants.webp" alt="" fill className="object-contain" sizes="288px" />
               </div>
               <h2 className="mt-8 text-3xl font-bold text-white sm:text-4xl">For Participants</h2>

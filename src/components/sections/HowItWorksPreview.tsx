@@ -48,7 +48,7 @@ export default function HowItWorksPreview() {
               )}
 
               <div className="relative mx-auto h-48 w-48">
-                <Image src={step.image} alt="" fill className="object-contain rounded-full bg-white" sizes="192px" />
+                <Image src={step.image} alt="" fill className="object-contain rounded-3xl bg-white" sizes="192px" />
                 <div className="absolute -top-1 -left-1 flex h-11 w-11 items-center justify-center rounded-xl gradient-brand text-white text-lg font-bold shadow-lg shadow-primary-500/20">
                   {step.number}
                 </div>
