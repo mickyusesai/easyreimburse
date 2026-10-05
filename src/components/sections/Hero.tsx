@@ -5,7 +5,7 @@ import { SITE, IMAGES } from '@/lib/constants';
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden py-20 sm:py-28 lg:py-32">
+    <section className="relative overflow-hidden pt-20 pb-36 sm:pt-28 sm:pb-44 lg:pt-32 lg:pb-60">
       {/* Background image with dark overlay */}
       <Image
         src={IMAGES.hero}

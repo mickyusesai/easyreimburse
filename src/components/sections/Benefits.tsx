@@ -41,13 +41,6 @@ const benefits = [
   },
 ];
 
-const greenTravel = {
-  title: 'Green travel, handled',
-  description:
-    'Mark a country as green travel, let participants upload hotel and meal receipts separately, and add the food and accommodation extra in one field. Declarations on honour are generated and signed in the app.',
-  image: '/illustrations/green-travel.webp',
-};
-
 export default function Benefits() {
   return (
     <section className="py-20 lg:py-28 bg-surface-alt">
@@ -60,27 +53,16 @@ export default function Benefits() {
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {benefits.map((benefit) => (
             <div key={benefit.title} className="rounded-2xl bg-white p-6 lg:p-8 ring-1 ring-gray-100 shadow-sm hover:shadow-md transition-shadow">
-              <div className="relative h-44 mb-5">
-                <Image src={benefit.image} alt="" fill className="object-contain" sizes="(max-width: 640px) 90vw, 320px" />
+              <div className="flex items-center gap-4">
+                <div className="relative h-16 w-16 shrink-0">
+                  <Image src={benefit.image} alt="" fill className="object-contain mix-blend-multiply" sizes="64px" />
+                </div>
+                <h3 className="text-xl font-semibold text-text-primary">{benefit.title}</h3>
               </div>
-              <h3 className="text-xl font-semibold text-text-primary">{benefit.title}</h3>
-              <p className="mt-2 text-text-secondary leading-relaxed">{benefit.description}</p>
+              <p className="mt-4 text-text-secondary leading-relaxed">{benefit.description}</p>
             </div>
           ))}
 
-          {/* Green travel gets a full-width card: it is the topic coordinators search for most */}
-          <div className="sm:col-span-2 lg:col-span-3 rounded-2xl bg-white p-6 lg:p-8 ring-2 ring-green-500/30 shadow-sm hover:shadow-md transition-shadow grid grid-cols-1 md:grid-cols-[14rem_1fr] gap-6 items-center">
-            <div className="relative h-48 md:h-52">
-              <Image src={greenTravel.image} alt="" fill className="object-contain" sizes="(max-width: 768px) 90vw, 224px" />
-            </div>
-            <div>
-              <span className="inline-flex rounded-full bg-green-50 px-3 py-1 text-xs font-semibold text-green-700 ring-1 ring-green-200">
-                Erasmus+ green travel
-              </span>
-              <h3 className="mt-3 text-2xl font-semibold text-text-primary">{greenTravel.title}</h3>
-              <p className="mt-2 text-text-secondary leading-relaxed max-w-3xl">{greenTravel.description}</p>
-            </div>
-          </div>
         </div>
       </Container>
     </section>

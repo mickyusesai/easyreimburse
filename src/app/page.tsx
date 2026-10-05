@@ -4,7 +4,7 @@ import HowItWorksPreview from '@/components/sections/HowItWorksPreview';
 import TravelBanner from '@/components/sections/TravelBanner';
 import SocialProof from '@/components/sections/SocialProof';
 import CTABanner from '@/components/sections/CTABanner';
-import ProductScreenshot from '@/components/sections/ProductScreenshot';
+import HeroScreens from '@/components/sections/HeroScreens';
 import { SITE } from '@/lib/constants';
 
 const softwareJsonLd = {
@@ -33,12 +33,7 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareJsonLd) }}
       />
       <Hero />
-      <ProductScreenshot
-        src="/screenshots/participant-trip-cards.png"
-        caption="Participant trip cards on a phone"
-        width={750}
-        height={1624}
-      />
+      <HeroScreens />
       <Benefits />
       <HowItWorksPreview />
       <TravelBanner />
