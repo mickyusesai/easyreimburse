@@ -4,7 +4,8 @@ import Container from '@/components/ui/Container';
 import SectionHeading from '@/components/ui/SectionHeading';
 import PageHeader from '@/components/ui/PageHeader';
 import CTABanner from '@/components/sections/CTABanner';
-import { IMAGES } from '@/lib/constants';
+import AutoplayVideo from '@/components/ui/AutoplayVideo';
+import { IMAGES, VIDEO } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'How It Works',
@@ -114,6 +115,17 @@ export default function HowItWorksPage() {
         imageSrc={IMAGES.howItWorks}
         imageAlt="Travel planning with maps and documents"
       />
+
+      {/* Product video */}
+      <section className="pt-20 lg:pt-28">
+        <Container className="max-w-5xl">
+          <SectionHeading
+            title="Watch it in under a minute"
+            subtitle="The participant upload, the AI-built trips, your overview, green travel and the audit export, in one short video."
+          />
+          <AutoplayVideo webm={VIDEO.webm} mp4={VIDEO.mp4} poster={VIDEO.poster} label={VIDEO.label} />
+        </Container>
+      </section>
 
       {/* For Organizations */}
       <section className="py-20 lg:py-28">

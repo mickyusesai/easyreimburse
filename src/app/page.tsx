@@ -4,7 +4,7 @@ import HowItWorksPreview from '@/components/sections/HowItWorksPreview';
 import TravelBanner from '@/components/sections/TravelBanner';
 import SocialProof from '@/components/sections/SocialProof';
 import CTABanner from '@/components/sections/CTABanner';
-import HeroScreens from '@/components/sections/HeroScreens';
+import HowItWorksVideo from '@/components/sections/HowItWorksVideo';
 import { SITE } from '@/lib/constants';
 
 const softwareJsonLd = {
@@ -33,7 +33,7 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareJsonLd) }}
       />
       <Hero />
-      <HeroScreens />
+      <HowItWorksVideo />
       <Benefits />
       <HowItWorksPreview />
       <TravelBanner />

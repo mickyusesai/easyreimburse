@@ -103,6 +103,13 @@ export const PRICING_PLANS = [
   },
 ] as const;
 
+export const VIDEO = {
+  webm: '/video/how-it-works.webm',
+  mp4: '/video/how-it-works.mp4',
+  poster: '/video/how-it-works-poster.webp',
+  label: 'How EasyReimburse works: a full reimbursement from upload to approval',
+} as const;
+
 export const IMAGES = {
   hero: '/hero-rotterdam.png',
   features: '/features-rome.png',
