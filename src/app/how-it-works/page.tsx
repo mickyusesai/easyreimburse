@@ -4,7 +4,6 @@ import Container from '@/components/ui/Container';
 import SectionHeading from '@/components/ui/SectionHeading';
 import PageHeader from '@/components/ui/PageHeader';
 import CTABanner from '@/components/sections/CTABanner';
-import WebinarBanner from '@/components/sections/WebinarBanner';
 import { IMAGES } from '@/lib/constants';
 
 export const metadata: Metadata = {
@@ -115,8 +114,6 @@ export default function HowItWorksPage() {
         imageSrc={IMAGES.howItWorks}
         imageAlt="Travel planning with maps and documents"
       />
-
-      <WebinarBanner />
 
       {/* For Organizations */}
       <section className="py-20 lg:py-28">
