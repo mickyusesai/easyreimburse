@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     q: 'Can I upgrade from the Free plan?',
-    a: 'Yes! Your free test project stays available. When you need more, simply purchase a project credit or pack. Credits never expire.',
+    a: 'Yes! Your test project keeps all its data: one credit turns it into a full project with 60 participants. When you need more, simply purchase a project credit or pack. Credits never expire.',
   },
   {
     q: 'Is there a per-participant fee?',
@@ -29,7 +29,15 @@ const faqs = [
   },
   {
     q: 'What if my project has more than 60 participants?',
-    a: 'If your project has more than 60 participants, you can use an additional project credit. Our pricing is structured this way to keep it fair for everyone and to prevent misuse of the software. Most Erasmus+ youth mobility projects fall well within the 60-participant limit.',
+    a: 'Use one extra credit to expand the same project by 60 more participants. Our pricing is structured this way to keep it fair for everyone and to prevent misuse of the software. Most Erasmus+ youth mobility projects fall well within the 60-participant limit.',
+  },
+  {
+    q: 'Do you support green travel?',
+    a: 'Yes. Mark a country as green travel for a higher limit, require a signed green-travel declaration, and add a food and accommodation extra per participant from their uploaded receipts.',
+  },
+  {
+    q: 'Which transport modes are supported?',
+    a: 'Plane, train, bus, ferry and car (per-km rate with carpooling). Interrail passes, luggage fees and group bookings are handled.',
   },
   {
     q: 'What payment methods do you accept?',
@@ -45,9 +53,23 @@ const faqs = [
   },
 ];
 
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.q,
+    acceptedAnswer: { '@type': 'Answer', text: faq.a },
+  })),
+};
+
 export default function PricingPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <PageHeader
         title="Simple, Transparent Pricing"
         subtitle="Try for free. Scale as you grow. No hidden fees. No subscriptions required."

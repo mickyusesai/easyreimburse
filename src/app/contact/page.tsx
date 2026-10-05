@@ -72,6 +72,9 @@ export default function ContactPage() {
                   courses and youth exchanges. We understand the project cycle because we
                   live it.
                 </p>
+                <p className="mt-2 text-xs text-white/80">
+                  Running green-travel projects? We do too. Ask us how the green travel extra works.
+                </p>
               </div>
             </div>
           </div>

@@ -28,12 +28,21 @@ export const metadata: Metadata = {
     title: 'EasyReimburse - AI-Powered Travel Reimbursement for Erasmus+',
     description:
       'Automate travel reimbursement for Erasmus+ youth mobility projects. From weeks to minutes.',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'EasyReimburse: Erasmus+ travel reimbursements, from weeks to minutes',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'EasyReimburse - AI-Powered Travel Reimbursement for Erasmus+',
     description:
       'Automate travel reimbursement for Erasmus+ youth mobility projects.',
+    images: ['/og-image.png'],
   },
   robots: {
     index: true,
