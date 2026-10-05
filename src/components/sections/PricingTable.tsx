@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { CheckIcon } from '@heroicons/react/24/solid';
 import Card from '@/components/ui/Card';
 import Badge from '@/components/ui/Badge';
@@ -10,9 +11,12 @@ export default function PricingTable() {
       {PRICING_PLANS.map((plan) => (
         <Card key={plan.name} highlighted={plan.highlighted} className="flex flex-col">
           <div className="flex-1">
-            {plan.badge && (
-              <Badge className="mb-4">{plan.badge}</Badge>
-            )}
+            <div className="relative -mt-2 mb-4 h-28">
+              <Image src={plan.image} alt="" fill className="object-contain object-left" sizes="112px" />
+              {plan.badge && (
+                <Badge className="absolute right-0 top-2">{plan.badge}</Badge>
+              )}
+            </div>
             <h3 className="text-xl font-bold text-text-primary">{plan.name}</h3>
 
             <div className="mt-3 flex items-baseline gap-1">

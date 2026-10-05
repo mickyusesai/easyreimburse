@@ -16,6 +16,7 @@ import {
   ChatBubbleLeftRightIcon,
   ClipboardDocumentCheckIcon,
   CheckBadgeIcon,
+  CheckCircleIcon,
   GlobeEuropeAfricaIcon,
   PaperAirplaneIcon,
   EnvelopeIcon,
@@ -28,6 +29,7 @@ import SectionHeading from '@/components/ui/SectionHeading';
 import PageHeader from '@/components/ui/PageHeader';
 import CTABanner from '@/components/sections/CTABanner';
 import { IMAGES } from '@/lib/constants';
+import { SCREENSHOTS } from '@/lib/screenshots';
 
 export const metadata: Metadata = {
   title: 'Features',
@@ -40,18 +42,21 @@ type Feature = {
   description: string;
   icon: React.ElementType;
   optional?: boolean;
+  short?: string;
 };
 
 const orgGroups: {
   title: string;
   subtitle: string;
   image: string;
+  screenshot?: { shot: keyof typeof SCREENSHOTS; caption: string };
   features: Feature[];
 }[] = [
   {
     title: 'Collect documents',
     subtitle: 'Get every participant uploading without accounts, passwords or chasing.',
     image: '/illustrations/collect.webp',
+    screenshot: { shot: 'oDashboardBrowser', caption: 'Organisation dashboard: credits, projects and participants at a glance' },
     features: [
       {
         title: 'Magic Link Invitations',
@@ -77,6 +82,7 @@ const orgGroups: {
     title: 'AI builds and reviews',
     subtitle: 'Two AIs do the reading, matching and checking for you.',
     image: '/illustrations/builds.webp',
+    screenshot: { shot: 'oParticipantMateoBrowser', caption: 'A participant file with the AI review findings next to the trips' },
     features: [
       {
         title: 'AI Document Processing',
@@ -108,6 +114,7 @@ const orgGroups: {
     title: 'You approve and pay',
     subtitle: 'Stay in control of every file, with the participant informed at each step.',
     image: '/illustrations/approve-pay.webp',
+    screenshot: { shot: 'oProjectBrowser', caption: 'Project overview: status per participant, requested versus maximum' },
     features: [
       {
         title: 'Project Dashboard',
@@ -172,35 +179,70 @@ const orgGroups: {
 const participantFeatures: Feature[] = [
   {
     title: 'No App Required',
+    short: 'Any mobile browser. No downloads, no sign-ups, no passwords.',
     description:
       'Works in any mobile browser. No downloads, no sign-ups, no complicated passwords. Just click the link and start uploading.',
     icon: DevicePhoneMobileIcon,
   },
   {
     title: 'You stay in control',
+    short: 'The AI drafts, you confirm: check, correct, exclude or add trips by hand.',
     description:
       'The AI drafts, you confirm. Every trip is a card you check, correct, exclude (“the host paid this”) or add by hand. Rebuild from your documents at any time.',
     icon: AdjustmentsHorizontalIcon,
   },
   {
     title: 'Photo Upload',
+    short: 'Blurry or rotated photos and broken PDFs are repaired; unreadable files are named.',
     description:
       'Just upload your ticket or boarding pass from your phone. The AI handles extracting all the relevant data and lets you know what\'s still missing. Rotated or blurry phone photos are normalised, broken PDFs from ticket portals are repaired, and if a file really cannot be read the participant is told which one to replace. Hotel and meal receipts never count towards the 25-document limit.',
     icon: CameraIcon,
   },
   {
     title: 'Real-Time Status',
+    short: 'See what is confirmed, what is missing and the exact amount before submitting.',
     description:
       'Participants see which trips are confirmed, what is still missing and the exact amount they will receive, including the country maximum and any green travel extra, before they submit.',
     icon: EyeIcon,
   },
   {
     title: 'Multi-Language Documents',
+    short: 'Documents in any European language; the interface is in English.',
     description:
       'Our AI understands travel documents in multiple European languages. Upload tickets from any country — it just works. The interface is in English; documents can be in any European language.',
     icon: LanguageIcon,
   },
 ];
+
+const participantScreens: { key: keyof typeof SCREENSHOTS; title: string; text: string }[] = [
+  { key: 'pStep1DocsLukasPhone', title: 'Add documents as you go', text: 'Tickets, boarding passes and invoices, even during the project.' },
+  { key: 'pLandingLenaPhone', title: 'Check the AI-built trips', text: 'Every trip is a card to confirm, edit or exclude.' },
+  { key: 'pStep3LenaPhone', title: 'Confirm and submit', text: 'Bank details, declarations and the exact amount to receive.' },
+];
+
+const greenPoints = [
+  'Per-country green flag with higher limits, overridable per participant',
+  'Hotel and meal receipts in their own section, grouped by day with totals',
+  'Signed green-travel declaration on honour, generated as a PDF',
+  'Enter the food and accommodation extra once; the participant is emailed',
+];
+
+function Screenshot({ shot, caption }: { shot: keyof typeof SCREENSHOTS; caption: string }) {
+  const image = SCREENSHOTS[shot];
+  return (
+    <figure className="mt-8">
+      <Image
+        src={image.src}
+        width={image.width}
+        height={image.height}
+        alt={caption}
+        className="w-full h-auto"
+        sizes="(max-width: 1024px) 100vw, 860px"
+      />
+      <figcaption className="mt-2 text-center text-sm text-text-muted">{caption}</figcaption>
+    </figure>
+  );
+}
 
 function FeatureCard({ feature }: { feature: Feature }) {
   return (
@@ -255,34 +297,106 @@ export default function FeaturesPage() {
                 <h2 className="mt-1 text-2xl font-bold text-text-primary sm:text-3xl">{group.title}</h2>
                 <p className="mt-2 text-text-secondary">{group.subtitle}</p>
               </div>
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                {group.features.map((feature) => (
-                  <FeatureCard key={feature.title} feature={feature} />
-                ))}
+              <div>
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                  {group.features.map((feature) => (
+                    <FeatureCard key={feature.title} feature={feature} />
+                  ))}
+                </div>
+                {group.screenshot && <Screenshot {...group.screenshot} />}
               </div>
             </div>
           </Container>
         </section>
       ))}
 
-      {/* For Participants */}
-      <section className="py-20 lg:py-28 bg-primary-950">
+      {/* Green travel */}
+      <section id="green-travel" className="scroll-mt-20 py-20 lg:py-28 bg-gradient-to-br from-green-50 via-white to-primary-50">
         <Container>
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-[22rem_1fr] lg:gap-16 items-center">
-            <div className="text-center lg:text-left">
-              <div className="relative mx-auto lg:mx-0 h-56 w-56 lg:h-72 lg:w-72 rounded-[2.5rem] bg-white overflow-hidden ring-8 ring-white/10">
-                <Image src="/illustrations/participants.webp" alt="" fill className="object-contain" sizes="288px" />
-              </div>
-              <h2 className="mt-8 text-3xl font-bold text-white sm:text-4xl">For Participants</h2>
-              <p className="mt-3 text-lg text-white/70">
-                A frictionless experience on their own phone that takes minutes, not hours.
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+            <div>
+              <span className="inline-flex rounded-full bg-green-100 px-3 py-1 text-xs font-semibold text-green-800 ring-1 ring-green-200">
+                Erasmus+ green travel
+              </span>
+              <h2 className="mt-4 text-3xl font-bold tracking-tight text-text-primary sm:text-4xl">
+                Green travel, handled
+              </h2>
+              <p className="mt-4 text-lg text-text-secondary leading-relaxed">
+                Mark a country as green travel, let participants upload hotel and meal receipts separately,
+                and add the food and accommodation extra in one field. Declarations on honour are generated
+                and signed in the app.
               </p>
+              <ul className="mt-6 space-y-3">
+                {greenPoints.map((point) => (
+                  <li key={point} className="flex gap-3 text-text-secondary">
+                    <CheckCircleIcon className="h-6 w-6 shrink-0 text-green-600" />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-              {participantFeatures.map((feature) => (
-                <FeatureCard key={feature.title} feature={feature} />
-              ))}
+            <div className="relative pb-16 sm:pb-24">
+              <Image
+                src={SCREENSHOTS.oParticipantJonasBrowser.src}
+                width={SCREENSHOTS.oParticipantJonasBrowser.width}
+                height={SCREENSHOTS.oParticipantJonasBrowser.height}
+                alt="Organiser view of a green traveller: receipts grouped by day with totals and the green travel extra"
+                className="w-full h-auto"
+                sizes="(max-width: 1024px) 100vw, 600px"
+              />
+              <Image
+                src={SCREENSHOTS.pStep2CostLenaPhone.src}
+                width={SCREENSHOTS.pStep2CostLenaPhone.width}
+                height={SCREENSHOTS.pStep2CostLenaPhone.height}
+                alt="Participant cost breakdown with food and accommodation to be added"
+                className="absolute bottom-0 left-0 w-32 sm:w-44 h-auto drop-shadow-2xl"
+                sizes="176px"
+              />
             </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* For Participants: told through the screens they actually see */}
+      <section className="py-20 lg:py-28 bg-primary-950 overflow-hidden">
+        <Container>
+          <div className="text-center max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-white sm:text-4xl">For Participants</h2>
+            <p className="mt-4 text-lg text-white/70">
+              A frictionless experience on their own phone that takes minutes, not hours.
+            </p>
+          </div>
+
+          <div className="mt-14 flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 sm:grid sm:grid-cols-3 sm:gap-8 sm:overflow-visible">
+            {participantScreens.map((screen, i) => (
+              <figure key={screen.key} className="snap-center shrink-0 w-64 sm:w-auto text-center">
+                <Image
+                  src={SCREENSHOTS[screen.key].src}
+                  width={SCREENSHOTS[screen.key].width}
+                  height={SCREENSHOTS[screen.key].height}
+                  alt={screen.title}
+                  className={clsx('mx-auto w-full max-w-[17rem] h-auto', i === 1 && 'sm:-translate-y-6')}
+                  sizes="(max-width: 640px) 256px, 272px"
+                />
+                <figcaption className="mt-5">
+                  <span className="inline-flex h-7 w-7 items-center justify-center rounded-lg gradient-brand text-sm font-bold text-white">
+                    {i + 1}
+                  </span>
+                  <p className="mt-2 font-semibold text-white">{screen.title}</p>
+                  <p className="mt-1 text-sm text-white/60">{screen.text}</p>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+
+          <div className="mt-16 grid grid-cols-1 gap-8 border-t border-white/10 pt-12 sm:grid-cols-2 lg:grid-cols-5">
+            {participantFeatures.map((feature) => (
+              <div key={feature.title}>
+                <feature.icon className="h-7 w-7 text-accent-400" />
+                <h3 className="mt-3 font-semibold text-white">{feature.title}</h3>
+                <p className="mt-1.5 text-sm text-white/60 leading-relaxed">{feature.short}</p>
+              </div>
+            ))}
           </div>
         </Container>
       </section>

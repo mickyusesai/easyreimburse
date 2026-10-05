@@ -6,6 +6,8 @@ export const SITE = {
   registerUrl: 'https://app.easyreimburse.ai/org/register',
   loginUrl: 'https://app.easyreimburse.ai/org/login',
   contactEmail: 'contact@easyreimburse.ai',
+  whatsappUrl: 'https://wa.me/31681081589',
+  whatsappDisplay: '+31 6 8108 1589',
   description:
     'Automate travel reimbursement for Erasmus+ youth mobility projects. AI-powered document processing. From weeks to minutes.',
 } as const;
@@ -21,6 +23,7 @@ export const NAV_LINKS = [
 export const PRICING_PLANS = [
   {
     name: 'Free',
+    image: '/illustrations/price-free.webp',
     price: 0,
     unit: null,
     perProject: null,
@@ -38,6 +41,7 @@ export const PRICING_PLANS = [
   },
   {
     name: 'Single Project',
+    image: '/illustrations/price-single.webp',
     price: 129,
     unit: '/project',
     perProject: null,
@@ -57,6 +61,7 @@ export const PRICING_PLANS = [
   },
   {
     name: '5-Pack',
+    image: '/illustrations/price-pack5.webp',
     price: 499,
     unit: null,
     perProject: 99.8,
@@ -77,6 +82,7 @@ export const PRICING_PLANS = [
   },
   {
     name: '10-Pack',
+    image: '/illustrations/price-pack10.webp',
     price: 899,
     unit: null,
     perProject: 89.9,

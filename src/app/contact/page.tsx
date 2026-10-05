@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { EnvelopeIcon, ClockIcon } from '@heroicons/react/24/outline';
 import Container from '@/components/ui/Container';
 import PageHeader from '@/components/ui/PageHeader';
 import ContactForm from '@/components/sections/ContactForm';
+import WhatsAppButton from '@/components/ui/WhatsAppButton';
 import { SITE, IMAGES } from '@/lib/constants';
 
 export const metadata: Metadata = {
@@ -32,9 +34,28 @@ export default function ContactPage() {
           {/* Contact info */}
           <div className="lg:col-span-2">
             <div className="rounded-2xl bg-surface-alt p-6 lg:p-8 ring-1 ring-gray-100">
-              <h3 className="text-lg font-semibold text-text-primary mb-6">
-                Contact Information
-              </h3>
+              {/* Who you'll be talking to */}
+              <div className="flex items-center gap-4">
+                <Image
+                  src="/micky-contact.jpg"
+                  alt="Micky van Zadelhoff"
+                  width={160}
+                  height={160}
+                  className="h-20 w-20 rounded-full object-cover ring-4 ring-white shadow-md"
+                />
+                <div>
+                  <p className="text-lg font-semibold text-text-primary">Micky van Zadelhoff</p>
+                  <p className="text-sm text-text-secondary">Founder · you&apos;ll be talking to me</p>
+                </div>
+              </div>
+              <p className="mt-4 text-sm text-text-secondary leading-relaxed">
+                Questions about your project, pricing or a demo? Send me a message on WhatsApp or use
+                the form, I read everything myself.
+              </p>
+              <WhatsAppButton className="mt-5 w-full" />
+              <p className="mt-2 text-center text-xs text-text-muted">{SITE.whatsappDisplay}</p>
+
+              <div className="my-6 border-t border-gray-200" />
 
               <div className="space-y-5">
                 <div className="flex items-start gap-3">
@@ -71,9 +92,6 @@ export default function ContactPage() {
                   EasyReimburse is built by an organization that runs Erasmus+ training
                   courses and youth exchanges. We understand the project cycle because we
                   live it.
-                </p>
-                <p className="mt-2 text-xs text-white/80">
-                  Running green-travel projects? We do too. Ask us how the green travel extra works.
                 </p>
               </div>
             </div>
