@@ -28,8 +28,8 @@ export default function HowItWorksPreview() {
     <section className="py-20 lg:py-28">
       <Container>
         <SectionHeading
-          title="How It Works"
-          subtitle="Three simple steps to painless reimbursements."
+          title="Three Simple Steps"
+          subtitle="From project setup to an approved, audit-ready file."
         />
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3 lg:gap-12">

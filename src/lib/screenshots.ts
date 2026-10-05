@@ -1,11 +1,6 @@
 // Generated from the framed product screenshots (fictional demo data). Sizes are the
 // intrinsic WebP dimensions so next/image can reserve space without layout shift.
 export const SCREENSHOTS = {
-  "heroThreePhones": {
-    "src": "/screenshots/hero-three-phones.webp",
-    "width": 1600,
-    "height": 976
-  },
   "oBillingBrowser": {
     "src": "/screenshots/o-billing-browser.webp",
     "width": 1400,
