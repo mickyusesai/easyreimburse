@@ -49,3 +49,8 @@
     -moz-osx-font-smoothing: grayscale;
   }
 }
+
+/* reCAPTCHA v3: the floating badge is replaced by the notice under the contact form */
+.grecaptcha-badge {
+  visibility: hidden;
+}

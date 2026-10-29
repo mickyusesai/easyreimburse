@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { ServerClient } from 'postmark';
+import { verifyRecaptcha } from '@/lib/recaptcha';
 
 function getClient() {
   const token = process.env.POSTMARK_SERVER_TOKEN;
@@ -24,6 +25,19 @@ export async function POST(req: NextRequest) {
       return NextResponse.json(
         { error: 'Please provide a valid email address.' },
         { status: 400 },
+      );
+    }
+
+    const captcha = await verifyRecaptcha(body.recaptchaToken, 'contact');
+    if (!captcha.ok) {
+      return NextResponse.json(
+        {
+          error:
+            captcha.reason === 'not-configured'
+              ? 'The form is temporarily unavailable. Please email us or send a WhatsApp message instead.'
+              : 'We could not verify that you are human. Please try again, or email us or send a WhatsApp message instead.',
+        },
+        { status: captcha.reason === 'not-configured' ? 500 : 400 },
       );
     }
 

@@ -1,7 +1,29 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Script from 'next/script';
 import Button from '@/components/ui/Button';
+import { SITE } from '@/lib/constants';
+
+declare global {
+  interface Window {
+    grecaptcha?: {
+      ready: (cb: () => void) => void;
+      execute: (siteKey: string, options: { action: string }) => Promise<string>;
+    };
+  }
+}
+
+/** Gets a fresh reCAPTCHA v3 token (they expire after two minutes, so fetch one per submit). */
+function getRecaptchaToken(): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const grecaptcha = window.grecaptcha;
+    if (!grecaptcha) return reject(new Error('Spam protection did not load. Please refresh the page and try again.'));
+    grecaptcha.ready(() => {
+      grecaptcha.execute(SITE.recaptchaSiteKey, { action: 'contact' }).then(resolve, reject);
+    });
+  });
+}
 
 type FormState = 'idle' | 'submitting' | 'success' | 'error';
 
@@ -40,10 +62,11 @@ export default function ContactForm() {
     };
 
     try {
+      const recaptchaToken = await getRecaptchaToken();
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, recaptchaToken }),
       });
 
       if (!res.ok) {
@@ -79,6 +102,9 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
+      {/* Loaded only on pages with this form, not site-wide */}
+      <Script src={`https://www.google.com/recaptcha/api.js?render=${SITE.recaptchaSiteKey}`} strategy="afterInteractive" />
+
       <div>
         <label htmlFor="name" className="block text-sm font-medium text-text-primary mb-1.5">
           Name <span className="text-accent-500">*</span>
@@ -163,6 +189,19 @@ export default function ContactForm() {
       <Button type="submit" disabled={state === 'submitting'} className="w-full sm:w-auto">
         {state === 'submitting' ? 'Sending...' : 'Send Message'}
       </Button>
+
+      {/* Google requires this notice when the floating reCAPTCHA badge is hidden */}
+      <p className="text-xs text-text-muted">
+        This form is protected by reCAPTCHA and the Google{' '}
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="underline hover:text-text-secondary">
+          Privacy Policy
+        </a>{' '}
+        and{' '}
+        <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="underline hover:text-text-secondary">
+          Terms of Service
+        </a>{' '}
+        apply.
+      </p>
     </form>
   );
 }
