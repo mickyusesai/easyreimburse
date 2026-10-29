@@ -6,6 +6,7 @@ export const SITE = {
   registerUrl: 'https://app.easyreimburse.ai/org/register',
   loginUrl: 'https://app.easyreimburse.ai/org/login',
   contactEmail: 'contact@easyreimburse.ai',
+  recaptchaSiteKey: '6Lf2hQYuAAAAAC8qqFxTU5mkwYWbe4P-2tFhW42Q',
   whatsappUrl: 'https://wa.me/31681081589',
   whatsappDisplay: '+31 6 8108 1589',
   description:

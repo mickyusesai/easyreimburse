@@ -104,6 +104,7 @@ export default function PrivacyPage() {
             <li><strong>Stripe:</strong> For payment processing (organization accounts only).</li>
             <li><strong>AI processing services:</strong> Travel documents are processed by AI models for data extraction. Documents are processed but not retained by the AI provider.</li>
             <li><strong>Hosting provider:</strong> Our platform is hosted on European servers.</li>
+            <li><strong>Google reCAPTCHA:</strong> Our contact form uses reCAPTCHA v3 to block spam. It sends technical data such as your IP address and browser information to Google to assess whether a submission comes from a person. See Google&apos;s <a href="https://policies.google.com/privacy">Privacy Policy</a>.</li>
             <li><strong>European Commission InforEuro API:</strong> For exchange rate data (no personal data is shared).</li>
           </ul>
 
@@ -143,6 +144,10 @@ export default function PrivacyPage() {
           <p>
             Our marketing website uses Plausible Analytics, which does not use cookies and does not
             track individuals. No cookie consent banner is required for this analytics service.
+          </p>
+          <p>
+            The contact page loads Google reCAPTCHA, which may set cookies to protect the form against
+            spam. These are used only for that security purpose.
           </p>
           <p>
             The application at {SITE.appUrl} uses essential session cookies required for the service
